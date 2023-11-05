@@ -1,7 +1,7 @@
 import XCTest
-@testable import BottomSheetModifier
+@testable import SwiftUIHandyTools
 
-final class BottomSheetModifierTests: XCTestCase {
+final class SwiftUIHandyToolsTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

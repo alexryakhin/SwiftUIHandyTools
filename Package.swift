@@ -4,20 +4,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "BottomSheetModifier",
+    name: "SwiftUIHandyTools",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "BottomSheetModifier",
-            targets: ["BottomSheetModifier"]),
+            name: "SwiftUIHandyTools",
+            targets: ["SwiftUIHandyTools"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "BottomSheetModifier"),
+            name: "SwiftUIHandyTools"),
         .testTarget(
-            name: "BottomSheetModifierTests",
-            dependencies: ["BottomSheetModifier"]),
+            name: "SwiftUIHandyToolsTests",
+            dependencies: ["SwiftUIHandyTools"]),
     ]
 )
