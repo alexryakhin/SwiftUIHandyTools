@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 13.0, *)
 struct TabBarViewModifier<TabItem: Tabbable>: ViewModifier {
     @EnvironmentObject private var selectionObject: TabBarSelection<TabItem>
     
@@ -17,8 +18,18 @@ struct TabBarViewModifier<TabItem: Tabbable>: ViewModifier {
     }
 }
 
+@available(iOS 13.0, *)
 extension View {
     public func tabItem<TabItem: Tabbable>(for item: TabItem) -> some View {
         return self.modifier(TabBarViewModifier(item: item))
+    }
+
+    @ViewBuilder func visibility(_ visibility: TabBarVisibility) -> some View {
+        switch visibility {
+        case .visible:
+            self.transition(.move(edge: .bottom))
+        case .invisible:
+            hidden().transition(.move(edge: .bottom))
+        }
     }
 }

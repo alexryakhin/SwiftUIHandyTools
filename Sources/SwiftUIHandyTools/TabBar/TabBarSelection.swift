@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 13.0, *)
 class TabBarSelection<TabItem: Tabbable>: ObservableObject {
     @Binding var selection: TabItem
     

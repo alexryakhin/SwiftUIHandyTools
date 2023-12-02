@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 13.0, *)
 public struct TabBar<TabItem: Tabbable, Content: View>: View {
 
     @State private var isKeyboardVisible = false
@@ -40,7 +41,6 @@ public struct TabBar<TabItem: Tabbable, Content: View>: View {
                             tabItems
                                 .frame(height: tabBarHeight)
                         }
-                        .background(.thinMaterial)
                         .frame(height: tabBarHeight)
                     }
                 }
@@ -89,13 +89,6 @@ public struct TabBar<TabItem: Tabbable, Content: View>: View {
                 .onTapGesture {
                     selectedItem.selection = item
                     selectedItem.objectWillChange.send()
-                }
-                .contextMenu {
-                    Group {
-                        Button("Action 1", action: {})
-                        Button("Action 2", action: {})
-                        Button("Action 3", action: {})
-                    }
                 }
             }
             .frame(maxWidth: .infinity)
